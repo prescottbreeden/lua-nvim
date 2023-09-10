@@ -59,7 +59,7 @@ return require("packer").startup(function(use)
   use "theprimeagen/harpoon"            -- buffer marking and hotlist
 
   -- [[ UI ]] --
-  use "eandrju/cellular-automaton.nvim" -- when you want to watch your buffer blow up
+  -- use "eandrju/cellular-automaton.nvim" -- when you want to watch your buffer blow up
   use "folke/zen-mode.nvim"             -- focus current buffer in quiet screen
   use "mfussenegger/nvim-dap"           -- debugger
   use "norcalli/nvim-colorizer.lua"     -- show color of hexcode on bg
@@ -69,14 +69,14 @@ return require("packer").startup(function(use)
   use "ryanoasis/vim-devicons"          -- part of prettier install / might not be necessary
 
   -- [ tree-sitter ] --
-  use {
-			"nvim-treesitter/nvim-treesitter",
-			run = function()
-				local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-				ts_update()
-			end,}
-  use "nvim-treesitter/nvim-treesitter-context"
-  use "nvim-treesitter/playground" -- interactive AST analysis
+  -- use {
+			-- "nvim-treesitter/nvim-treesitter",
+			-- run = function()
+				-- local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+				-- ts_update()
+			-- end,}
+  -- use "nvim-treesitter/nvim-treesitter-context"
+  -- use "nvim-treesitter/playground" -- interactive AST analysis
 
   -- [ themes ] --
   use "nanotech/jellybeans.vim" -- my favorite but contrast can be hit and miss
