@@ -30,7 +30,7 @@ return require("packer").startup(function(use)
   -- [[ LSP ]] --
   use {
 	  "VonHeikemen/lsp-zero.nvim",
-	  branch = "v1.x",
+	  branch = "v2.x",
 	  requires = {
 		  -- LSP Support
 		  {"neovim/nvim-lspconfig"},
@@ -69,14 +69,14 @@ return require("packer").startup(function(use)
   use "ryanoasis/vim-devicons"          -- part of prettier install / might not be necessary
 
   -- [ tree-sitter ] --
-  -- use {
-			-- "nvim-treesitter/nvim-treesitter",
-			-- run = function()
-				-- local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-				-- ts_update()
-			-- end,}
-  -- use "nvim-treesitter/nvim-treesitter-context"
-  -- use "nvim-treesitter/playground" -- interactive AST analysis
+  use {
+			"nvim-treesitter/nvim-treesitter",
+			run = function()
+				local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+				ts_update()
+			end,}
+  use "nvim-treesitter/nvim-treesitter-context"
+  use "nvim-treesitter/playground" -- interactive AST analysis
 
   -- [ themes ] --
   use "nanotech/jellybeans.vim" -- my favorite but contrast can be hit and miss
