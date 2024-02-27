@@ -1,6 +1,19 @@
 " ========================
 "       Cheat Sheet
 " ========================
+"
+" npm clean cache: (cache is a mounted drive apparently)
+" rm -rf /dev/shm/helltool/apps/web/webpack
+"
+" yanking file paths
+" relative path
+":let @+ = expand("%")
+
+" full path
+":let @+ = expand("%:p")
+
+" just filename
+":let @+ = expand("%:t")
 
 ## Remaps
 
@@ -78,15 +91,6 @@ Harpoon menu can also be manually manipulated like any buffer
 | mode          | description                   | command         |
 | ------------- | ----------------------------- | --------------- |
 | normal/visual | format file/selected          | `:Prettier`     |
-
-
-
-controller.defaultExportFormat = SettingsStore.getDefaultExportFormat();
-controller.exportFormats = SettingsStore.getExportFormats();
-controller.queryWontHitLimit = true;
-controller.setCannotStreamReason(
-
-  this.customExportMaxRowLimit = null;
 
 
 

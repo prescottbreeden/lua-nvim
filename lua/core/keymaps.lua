@@ -15,6 +15,7 @@ end
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
+vim.api.nvim_set_keymap('n', '<leader>g', ':GeminiQuery<CR>', { noremap = true, silent = true })
 
 -- Normal --
 
@@ -51,6 +52,7 @@ keymap("n", "Q", "<nop>", opts)                                                 
 keymap("n", "<C-n>", ":noh<cr>", opts)                                                  -- clear search highlights
 keymap("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>", {})    -- live search replace on current word
 keymap("n", "<leader>?", ":nos botright 85vs ~/.config/nvim/cheats.vim<cr>", opts)      -- open cheat sheet
+keymap("n", "<leader>cp", ":let @+ = expand('%')<cr>", opts)                            -- copy relative code path
 
 vim.keymap.set("n", "dd", smart_dd, { noremap = true, expr = true })                    -- prevent blank lines from getting added to clipboard when deleting lines
 

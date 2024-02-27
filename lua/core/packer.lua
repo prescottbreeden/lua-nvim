@@ -51,6 +51,16 @@ return require("packer").startup(function(use)
 	  }
   }
 
+  -- [[ LLM ]] --
+  use {
+    'huynle/ogpt.nvim',
+    requires = {
+      'MunifTanjim/nui.nvim',
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+    },
+  }
+
   -- [[ Navigation ]] --
   use "folke/trouble.nvim"              -- error pane
   use "mbbill/undotree"                 -- commit history of undo stack
@@ -67,6 +77,7 @@ return require("packer").startup(function(use)
   use "nvim-tree/nvim-web-devicons"     -- vscode icon package
   use "rcarriga/nvim-dap-ui"            -- debugger ui
   use "ryanoasis/vim-devicons"          -- part of prettier install / might not be necessary
+  use "folke/edgy.nvim"                 -- sidebar
 
   -- [ tree-sitter ] --
   use {
@@ -91,6 +102,7 @@ return require("packer").startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- peer dependency
   use "MunifTanjim/prettier.nvim"       -- hook into current project prettier
   use "windwp/nvim-autopairs"           -- auto-pair () [] {} "" ''
+  use "slim-template/vim-slim"          -- slim highlighting
 
   -- [ system clipboard ] --
   use "ojroques/vim-oscyank"  -- system clipboard
