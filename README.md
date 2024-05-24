@@ -1,3 +1,29 @@
+# Install
+1) install [neovim](https://neovim.io/)
+for linux go here: [linux install instructions](https://github.com/neovim/neovim/blob/master/INSTALL.md#linux)
+
+2) install [packer](https://github.com/wbthomason/packer.nvim)
+
+```shell
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+
+3) clone repo to `~/.config/nvim`
+```shell
+mkdir -p ~/.config/nvim
+git clone git@github.com:prescottbreeden/lua-nvim.git ~/.config/nvim
+```
+
+4) open neovim and install packages
+```shell
+nvim ~/.config/nvim/lua/package.lua
+```
+once the file is open, close all errors and then run `:so` to source
+the code and save the file `:w` to auto install plugins
+
+5) start growing a bigger neck beard
+
 # Latest
 
 Slimmed down considerably from previous CoC config. Always a WIP.
