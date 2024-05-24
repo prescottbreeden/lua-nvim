@@ -1,3 +1,5 @@
+-- this is a customized lualine I threw together
+-- most prebuilts are too verbose (or too sparse)
 require('lualine').setup {
   options = {
     icons_enabled = true,

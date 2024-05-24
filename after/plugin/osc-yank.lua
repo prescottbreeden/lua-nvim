@@ -1,3 +1,5 @@
+-- this allows you to yank from vim and paste from your system
+-- clipboard, even over ssh
 vim.g.oscyank_term = 'tmux'
 
 function Yank_post()
@@ -6,7 +8,7 @@ function Yank_post()
     vim.v.event.regname == "*" or
     vim.v.event.regname == "+" or
     vim.v.event.regname == "0"
-    ) then 
+    ) then
     vim.cmd('execute "OSCYankRegister +"')
   end
 end

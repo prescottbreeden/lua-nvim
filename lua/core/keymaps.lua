@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- prevents using `dd` on an empty line and overwriting current register
@@ -15,7 +14,6 @@ end
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.api.nvim_set_keymap('n', '<leader>g', ':GeminiQuery<CR>', { noremap = true, silent = true })
 
 -- Normal --
 

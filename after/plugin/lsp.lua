@@ -37,7 +37,7 @@ lsp.set_preferences({
     }
 })
 
-lsp.on_attach(function(client, bufnr)
+lsp.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
 
   keymap("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -56,6 +56,6 @@ end)
 lsp.setup()
 
 vim.diagnostic.config({
-    virtual_text = true
+    virtual_text = true -- show error text right screen
 })
 

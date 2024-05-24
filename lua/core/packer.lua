@@ -69,13 +69,13 @@ return require("packer").startup(function(use)
   use "theprimeagen/harpoon"            -- buffer marking and hotlist
 
   -- [[ UI ]] --
-  -- use "eandrju/cellular-automaton.nvim" -- when you want to watch your buffer blow up
+  use "eandrju/cellular-automaton.nvim" -- when you want to watch your buffer blow up
   use "folke/zen-mode.nvim"             -- focus current buffer in quiet screen
-  use "mfussenegger/nvim-dap"           -- debugger
+  -- use "mfussenegger/nvim-dap"           -- debugger
   use "norcalli/nvim-colorizer.lua"     -- show color of hexcode on bg
   use "nvim-lualine/lualine.nvim"       -- status bar
   use "nvim-tree/nvim-web-devicons"     -- vscode icon package
-  use "rcarriga/nvim-dap-ui"            -- debugger ui
+  -- use "rcarriga/nvim-dap-ui"            -- debugger ui
   use "ryanoasis/vim-devicons"          -- part of prettier install / might not be necessary
   use "folke/edgy.nvim"                 -- sidebar
 
@@ -92,7 +92,7 @@ return require("packer").startup(function(use)
   -- [ themes ] --
   use "nanotech/jellybeans.vim" -- my favorite but contrast can be hit and miss
   use "rebelot/kanagawa.nvim"   -- inspired by the Japanese painter
-  use "tomasiser/vim-code-dark" -- solid default VSCode-like theme
+  use 'Mofiqul/vscode.nvim'     -- vscode style
   use "catppuccin/nvim"         -- decent if looking for something different
   use "folke/tokyonight.nvim"   -- the infamous (very blue)
   use "rose-pine/neovim"        -- lot of purple, turquoise and gold

@@ -15,6 +15,12 @@
 " just filename
 ":let @+ = expand("%:t")
 
+" ========================
+"       FROM README
+" ========================
+
+Slimmed down considerably from previous CoC config. Always a WIP.
+
 ## Remaps
 
 Leader key: `<spacebar>`
@@ -43,6 +49,7 @@ Leader key: `<spacebar>`
 | normal        | toggle AST                    | `<leader>ast`   |
 | insert        | suggest options               | `<C-space>`     |
 | insert        | next/prev option              | `<C-n>`/`<C-p>` |
+| insert        | confirm option                | `<C-y>`         |
 | insert        | signature help                | `<C-h>`         |
 
 ### Trouble
@@ -69,8 +76,9 @@ Harpoon menu can also be manually manipulated like any buffer
 | search all file names          | `<leader>ff`  |
 | search all buffers             | `<leader>fb`  |
 | search all keymaps             | `<leader>fk`  |
-| dual grep all files            | `<leader>fg`  |
-| fuzzy find current buffer      | `<leader>fc`  |
+| live grep all files            | `<leader>fg`  |
+| dual grep all files            | `<leader>gg`  |
+| fuzzy find current buffer      | `<leader>/`  |
 | close buffer in buffer search  | `<C-x>`       |
 
 ### Nerdtree
@@ -92,6 +100,12 @@ Harpoon menu can also be manually manipulated like any buffer
 | ------------- | ----------------------------- | --------------- |
 | normal/visual | format file/selected          | `:Prettier`     |
 
+### Zen Mode
+| mode          | description                   | command         |
+| ------------- | ----------------------------- | --------------- |
+| normal        | focus only on current buffer  | `<leader>zz`    |
 
-
+### Other Notes
+DAP (debugger) is not configured, but dap.lua has a default config file
+if that is of interest to you
 
