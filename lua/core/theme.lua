@@ -8,13 +8,13 @@ end
 -- note: do _not_ uncomment the `use` strings, those are just for reference to packer.lua
 
 -- use "nanotech/jellybeans.vim"  -- my favorite but contrast can be hit and miss
-Theme('jellybeans')
+-- Theme('jellybeans')
 
 -- use "rebelot/kanagawa.nvim"    -- inspired by the Japanese painter
 -- Theme('kanagawa')
 -- Theme('kanagawa-dragon')       -- 🐲 🐉 🐲
 -- Theme('kanagawa-lotus')        -- light theme, parchment paper feel
--- Theme('kanagawa-wave')         -- if you like blue, strong competitor to tokyonight
+Theme('kanagawa-wave')         -- if you like blue, strong competitor to tokyonight
 
 -- use "tomasiser/vim-code-dark"  -- default VSCode-like dark theme
 -- Theme('vscode')
