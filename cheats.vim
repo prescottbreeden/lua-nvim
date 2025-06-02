@@ -16,3 +16,4 @@ deployment/manifests/dev/experiment/deploy experiment-2 --force
 
 " remove all but filename in a path:
 :s/!.*/!!
+

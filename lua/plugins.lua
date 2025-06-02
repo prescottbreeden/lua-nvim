@@ -25,4 +25,5 @@ return {
   "tpope/vim-eunuch",     -- vim sugar for the UNIX shell commands
   "tpope/vim-repeat",     -- improved . power
   "tpope/vim-surround",   -- add / replace surrounding pairs
+  { import = 'plugins.google' },
 }

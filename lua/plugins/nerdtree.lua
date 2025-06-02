@@ -4,7 +4,7 @@ return {
   config = function()
     vim.cmd('let NERDTreeShowHidden=1')
 
-    vim.keymap.set("n", "<leader>nt", ":NERDTreeToggle<cr>", { desc = "Toggle NERDTree" })
-    vim.keymap.set("n", "<leader>nf", ":NERDTreeFind<cr>", { desc = "Show file in NERDTree" })
+    vim.keymap.set("n", "<leader>,m,", ":NERDTreeToggle<cr>", { desc = "Toggle NERDTree" })
+    vim.keymap.set("n", "<leader>,mf", ":NERDTreeFind<cr>", { desc = "Show file in NERDTree" })
   end
 }

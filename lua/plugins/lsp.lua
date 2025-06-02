@@ -12,20 +12,20 @@ return {
     { "williamboman/mason-lspconfig.nvim" },
 
     -- Autocompletion --
-    {"hrsh7th/cmp-buffer"},
-    {"hrsh7th/cmp-nvim-lsp"},
-    {"hrsh7th/cmp-nvim-lua"},
-    {"hrsh7th/cmp-path"},
-    {"hrsh7th/nvim-cmp"},
-    {"hrsh7th/nvim-cmp" },
-    {"onsails/lspkind.nvim" },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-nvim-lua" },
+    { "hrsh7th/cmp-path" },
+    { "hrsh7th/nvim-cmp" },
+    { "hrsh7th/nvim-cmp" },
+    { "onsails/lspkind.nvim" },
 
     -- Snippets --
-    {"hrsh7th/vim-vsnip" },
-    {"hrsh7th/cmp-vsnip" },
-    {"L3MON4D3/LuaSnip"},
-    {"saadparwaiz1/cmp_luasnip"},
-    {"rafamadriz/friendly-snippets"},
+    { "hrsh7th/vim-vsnip" },
+    { "hrsh7th/cmp-vsnip" },
+    { "L3MON4D3/LuaSnip" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "rafamadriz/friendly-snippets" },
   },
   config = function()
     local lsp = require("lsp-zero")
@@ -33,23 +33,30 @@ return {
     lsp.on_attach(function(client, bufnr)
       local opts = { buffer = bufnr, remap = false }
 
-      vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Reference" }))
-      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Definition" }))
+      vim.keymap.set("n", "gr", function() vim.lsp.buf.references() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Reference" }))
+      vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Goto Definition" }))
 
       -- [ DOCS, SIGNATURES ]--
-      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Hover" }))
-      vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Signature Help" }))
+      vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Hover" }))
+      vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Signature Help" }))
 
       -- [ DIAGNOSTICS ]--
-      vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.setloclist() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Show Diagnostics" }))
-      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, vim.tbl_deep_extend("force", opts, { desc = "Next Diagnostic" }))
-      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, vim.tbl_deep_extend("force", opts, { desc = "Previous Diagnostic" }))
+      vim.keymap.set("n", "<leader>dd", function() vim.diagnostic.setloclist() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Show Diagnostics" }))
+      vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end,
+        vim.tbl_deep_extend("force", opts, { desc = "Next Diagnostic" }))
+      vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end,
+        vim.tbl_deep_extend("force", opts, { desc = "Previous Diagnostic" }))
 
       -- [ CODE ACTIONS ]--
-      vim.keymap.set("n", "<leader>qf", function() vim.lsp.buf.code_action() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Code Action" }))
-      vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Rename" }))
-
-      -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, vim.tbl_deep_extend("force", opts, { desc = "LSP Workspace Symbol" }))
+      vim.keymap.set("n", "<leader>qf", function() vim.lsp.buf.code_action() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Code Action" }))
+      vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end,
+        vim.tbl_deep_extend("force", opts, { desc = "LSP Rename" }))
     end)
 
     require("mason").setup({})
@@ -104,13 +111,13 @@ return {
       sources = cmp.config.sources({
         { name = "path" },
       }, {
-          {
-            name = "cmdline",
-            option = {
-              ignore_cmds = { "Man", "!" },
-            },
+        {
+          name = "cmdline",
+          option = {
+            ignore_cmds = { "Man", "!" },
           },
-        }),
+        },
+      }),
     })
 
     cmp.setup({
@@ -120,9 +127,10 @@ return {
         end,
       },
       sources = {
+        { name = "buganizer" },
         { name = "nvim_lsp" },
-        { name = "luasnip", keyword_length = 2 },
-        { name = "buffer", keyword_length = 3 },
+        { name = "luasnip",  keyword_length = 2 },
+        { name = "buffer",   keyword_length = 3 },
         { name = "path" },
       },
       mapping = cmp.mapping.preset.insert({
