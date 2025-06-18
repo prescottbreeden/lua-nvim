@@ -59,38 +59,6 @@ return {
         vim.tbl_deep_extend("force", opts, { desc = "LSP Rename" }))
     end)
 
-    require("mason").setup({})
-    require("mason-lspconfig").setup({
-      ensure_installed = {
-        "ts_ls",
-        "eslint",
-        "rust_analyzer",
-        "kotlin_language_server",
-        "jdtls",
-        "lua_ls",
-        "jsonls",
-        "html",
-        "elixirls",
-        "tailwindcss",
-        "tflint",
-        "pylsp",
-        "dockerls",
-        "bashls",
-        "marksman",
-        "solargraph",
-        "cucumber_language_server",
-        "gopls",
-        "astro",
-      },
-      handlers = {
-        lsp.default_setup,
-        lua_ls = function()
-          local lua_opts = lsp.nvim_lua_ls()
-          require("lspconfig").lua_ls.setup(lua_opts)
-        end,
-      },
-    })
-
     local cmp_action = require("lsp-zero").cmp_action()
     local cmp = require("cmp")
     local cmp_select = { behavior = cmp.SelectBehavior.Select }
