@@ -1,13 +1,16 @@
 return {
   "nvim-treesitter/nvim-treesitter",
+  lazy = false,
+  priority = 1000,
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
-    "nvim-treesitter/playground", -- interactive AST analysis
+    "nvim-treesitter/playground",
   },
-  build = ":TSUpdate",
+  build = function()
+    vim.cmd("TSUpdate")
+  end,
   config = function()
-    local configs = require("nvim-treesitter.configs")
-    configs.setup({
+    require("nvim-treesitter.configs").setup({
       modules = {},
       ignore_install = {},
       auto_install = true,
@@ -24,13 +27,14 @@ return {
         "lua",
         "markdown",
         "query",
+        "regex",
         "ruby",
+        "rust",
         "tsx",
         "typescript",
         "vim",
         "vimdoc",
       },
-      with_sync = true,
       sync_install = false,
       highlight = {
         enable = true,

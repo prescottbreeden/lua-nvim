@@ -3,12 +3,7 @@ return {
   branch = "v2.x",
   dependencies = {
     { "neovim/nvim-lspconfig" },
-    {
-      "williamboman/mason.nvim",
-      build = function()
-        vim.cmd("MasonUpdate")
-      end,
-    },
+    { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
 
     -- Autocompletion --
@@ -58,6 +53,8 @@ return {
       vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end,
         vim.tbl_deep_extend("force", opts, { desc = "LSP Rename" }))
     end)
+
+    lsp.preset("recommended")
 
     local cmp_action = require("lsp-zero").cmp_action()
     local cmp = require("cmp")
@@ -112,5 +109,32 @@ return {
         ["<S-Tab>"] = cmp_action.luasnip_shift_supertab(),
       }),
     })
+
+    -- Get default capabilities, potentially enhanced by nvim-cmp
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    require('lspconfig').rust_analyzer.setup({
+      capabilities = capabilities, -- Pass the capabilities
+      settings = {
+        ['rust-analyzer'] = {
+          check = {
+            command = "clippy",
+          },
+        },
+      },
+    })
+
+    require('lspconfig').gopls.setup({
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+        },
+      },
+    })
+
+    lsp.setup()
   end,
 }

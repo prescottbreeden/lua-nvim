@@ -38,7 +38,9 @@ return {
     },
     {
       "jay-babu/mason-nvim-dap.nvim",
-      dependencies = "mason.nvim",
+      dependencies = {
+        { "williamboman/mason.nvim" },
+      },
       cmd = { "DapInstall", "DapUninstall" },
       opts = {
         automatic_installation = true,
@@ -48,6 +50,7 @@ return {
         },
       },
     },
+
     { "jbyuki/one-small-step-for-vimkind", module = "osv" },
   },
 }

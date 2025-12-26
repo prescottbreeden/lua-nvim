@@ -28,3 +28,7 @@ require 'core.options'
 require 'core.icons'
 require 'core.keymaps'
 require 'core.theme'
+
+-- meh
+vim.ui.input = require("snacks.input").input
+vim.ui.select = require("snacks.picker").select

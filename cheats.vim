@@ -2,18 +2,22 @@
 "       Cheat Sheet
 " ========================
 "
-" nexus authorize
-build/scripts/authorize_nexus.sh
-
-" npm clean cache: (cache is a mounted drive apparently)
-rm -rf /dev/shm/helltool/apps/web/webpack
-"
-" Auxilia deployment:
-deployment/manifests/dev/experiment/deploy experiment-2 --force
-"
 " highlight duplicates:
 :g/^\(.*\)$\n\(\_.*\)\(^\1$\)/
 
 " remove all but filename in a path:
 :s/!.*/!!
+
+" copy file path
+:let @" = expand("%")
+
+" orchestrator/ExecutionStateHydrator.java
+" orchestrator/SourceSampler.java
+" orchestrator/TableValidator.java
+" connector/postgresql/PostgresqlDialectConnector.java
+" connector/bigquery/BigQueryDialectConnector.java
+" connector/api/DialectConnector.java
+model/report/SampleMetadata.java
+model/context/ExecutionState.java
+
 
